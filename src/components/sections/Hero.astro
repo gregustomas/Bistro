@@ -1,0 +1,8 @@
+---
+import { heroSlides } from "@/data/heroSlides";
+import HeroSlider from "../islands/HeroSlider";
+---
+
+<section class="before:border-primary/20 relative flex-1 py-12 before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:border-b sm:py-16 lg:py-24">
+  <HeroSlider slides={heroSlides} client:load />
+</section>
