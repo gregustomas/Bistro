@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import team from "src/assets/about-us.webp";
+import { ChefHat, Sparkles, Trophy, Users } from "lucide-react";
+import { Stats } from "@/data/stats";
+
+const icons = { Sparkles, ChefHat, Users, Trophy };
+---
+
+<section
+  class="py-8 sm:py-16 lg:py-24 relative before:bg-muted before:absolute before:inset-0 before:-z-1 before:skew-y-3"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      class="mx-auto mb-12 flex max-w-2xl flex-col text-center items-center justify-center space-y-4 sm:mb-16 lg:mb-24"
+    >
+      <Badge variant="outline">About Us</Badge>
+      <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl">
+        Our story & achievements
+      </h2>
+      <p class="text-xl text-muted-foreground">
+        At Restaurant, every dish tells a story. With years of dedication and a
+        passion for fine dining, we've transformed the art of cooking into an
+        unforgettable experience.
+      </p>
+      <Button variant="fancy">Read more -></Button>
+    </div>
+
+    <div class="relative mb-8 h-full w-full sm:mb-16 lg:mb-24">
+      <Image src={team} alt="Our team" class="full-size-img h-full w-full" />
+      <div
+        class="bg-background grid gap-10 border p-8 sm:max-lg:grid-cols-2 lg:absolute lg:-bottom-25 lg:left-1/2 lg:w-3/4 lg:-translate-x-1/2 lg:grid-cols-4 lg:px-10"
+      >
+        {
+          Stats.map((stat) => {
+            const Icon = icons[stat.icon as keyof typeof icons];
+
+            return (
+              <div class="flex flex-col justify-center items-center text-center gap-2.5">
+                <Icon size={24} />
+                <span class="text-2xl font-semibold">{stat.value}</span>
+                <p class="text-muted-foreground">{stat.label}</p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</section>
