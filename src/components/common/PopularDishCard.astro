@@ -1,0 +1,25 @@
+---
+import type { PopularDish } from "@/data/popularDishes";
+import { Image } from "astro:assets";
+
+type Props = PopularDish;
+
+const { image, alt, name, category, description } = Astro.props;
+---
+
+<div class="bg-card">
+  <div
+    class="max-w-xs border hover:border-primary transition-colors duration-250"
+  >
+    <Image src={image} alt={alt} />
+    <div class="p-4 grid gap-2">
+      <h3 class="py-4 border-b text-lg font-semibold">{name}</h3>
+      <span class="text-md font-semibold text-muted-foreground">
+        {category}
+      </span>
+      <p class="text-md text-muted-foreground">
+        {description}
+      </p>
+    </div>
+  </div>
+</div>

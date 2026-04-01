@@ -17,11 +17,7 @@ export default function HeroSlider({ slides }: Props) {
   const [mainRef, mainApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 3000, stopOnInteraction: false }),
   ]);
-  const [thumbRef, thumbApi] = useEmblaCarousel({
-    containScroll: false,
-    loop: true,
-    watchDrag: true,
-  });
+  const [thumbRef, thumbApi] = useEmblaCarousel({ loop: true });
   const [testimonialRef, testimonialApi] = useEmblaCarousel({ loop: true });
 
   const onMainSelect = useCallback(() => {
