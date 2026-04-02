@@ -1,0 +1,26 @@
+---
+import type { MenuItem } from "@/data/menuItems";
+import { Image } from "astro:assets";
+import { Button } from "../ui/button";
+
+type Props = MenuItem;
+
+const { image, alt, name, description, link } = Astro.props;
+---
+
+<div
+  class="bg-card text-card-foreground flex flex-col gap-6 border py-6 hover:border-primary rounded-none pt-0 shadow-none transition-colors duration-250 max-lg:last:col-span-full"
+>
+  <Image src={image} alt={alt} class="aspect-video h-60 w-full object-cover" />
+  <div class="p-4 grid gap-4">
+    <h3 class="text-lg font-semibold">{name}</h3>
+    <p class="mb-2 text-md text-muted-foreground">{description}</p>
+    <Button
+      variant="secondary"
+      size="sm"
+      className="w-fit rounded-full text-sm px-7 py-5"
+    >
+      <a href={link} class="font-semibold">Full menu -></a>
+    </Button>
+  </div>
+</div>

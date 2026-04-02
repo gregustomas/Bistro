@@ -2,6 +2,7 @@ import grilled from "@/assets/popular/grilled-herb-chicken.webp";
 import pizza from "@/assets/popular/classic-margherita-pizza.webp";
 import shrimp from "@/assets/popular/spicy-shrimp-linguine.webp";
 import cake from "@/assets/popular/chocolate-lava-cake.webp";
+import type { ImageMetadata } from "astro";
 
 export interface PopularDish {
   image: ImageMetadata;
