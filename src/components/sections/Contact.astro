@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import { Badge } from "../ui/badge";
+import ContactUsImg from "@/assets/contact-us-01.webp";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
+---
+
+<section
+  class="py-8 sm:py-16 lg:py-24 relative before:absolute before:inset-0 before:skew-y-3 before:-z-10 before:bg-muted"
+>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+      <div
+        class="col-span-1 md:col-span-2 mx-auto flex max-w-2xl flex-col text-center items-center justify-center space-y-4"
+      >
+        <Badge variant="outline">Contact Us</Badge>
+        <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl">
+          Get in touch with us
+        </h2>
+        <p class="text-xl text-muted-foreground">
+          We eagerly look forward to warmly welcoming you very soon to our
+          event. It promises to be a memorable experience filled with exciting
+          activities.
+        </p>
+      </div>
+
+      <div>
+        <Image
+          src={ContactUsImg}
+          alt="Chef"
+          class="size-full object-cover max-lg:max-h-70"
+        />
+      </div>
+      <div class="flex flex-col justify-between gap-6">
+        <div>
+          <h3 class="mb-2 text-2xl">We're here to serve you</h3>
+          <p class="text-md text-muted-foreground">
+            We would love to hear from you, Whether you have a question, need a
+            reservation, or want to learn more about our offerings, we're here
+            to assist.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <!-- working hours -->
+          <div
+            class="p-6 bg-card border hover:border-primary transition-colors duration-250 w-full md:max-w-xs text-center flex flex-col items-center justify-center"
+          >
+            <span
+              class="mb-4 group/avatar relative flex shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6 size-9 border"
+            >
+              <Clock size={18} className="absolute translate-x-1/2 top-2" />
+            </span>
+            <div class="space-y-3">
+              <h4 class="text-md font-semibold">Open Hours</h4>
+              <div class="text-muted-foreground text-base font-medium">
+                <p>Monday-Friday</p>
+                <p>8:00 am to 5:00 pm</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- adress -->
+          <div
+            class="p-6 bg-card border hover:border-primary transition-colors duration-250 w-full md:max-w-xs text-center flex flex-col items-center justify-center"
+          >
+            <span
+              class="mb-4 group/avatar relative flex shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6 size-9 border"
+            >
+              <MapPin size={18} className="absolute translate-x-1/2 top-2" />
+            </span>
+            <div class="space-y-3">
+              <h4 class="text-md font-semibold">Our Address</h4>
+              <div class="text-muted-foreground text-base font-medium">
+                <p>802 Perston Rd,Maine</p>
+                <p>96812, USA</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- email -->
+          <div
+            class="p-6 bg-card border hover:border-primary transition-colors duration-250 w-full md:max-w-xs text-center flex flex-col items-center justify-center"
+          >
+            <span
+              class="mb-4 group/avatar relative flex shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6 size-9 border"
+            >
+              <Mail size={18} className="absolute translate-x-1/2 top-2" />
+            </span>
+            <div class="space-y-3">
+              <h4 class="text-md font-semibold">Email</h4>
+              <p class="text-muted-foreground text-base font-medium">
+                info@seliziakitchen.com
+              </p>
+            </div>
+          </div>
+
+          <!-- phone -->
+          <div
+            class="p-6 bg-card border hover:border-primary transition-colors duration-250 w-full md:max-w-xs text-center flex flex-col items-center justify-center"
+          >
+            <span
+              class="mb-4 group/avatar relative flex shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6 size-9 border"
+            >
+              <Phone size={18} className="absolute translate-x-1/2 top-2" />
+            </span>
+            <div class="space-y-3">
+              <h4 class="text-md font-semibold">Phone</h4>
+              <p class="text-muted-foreground text-base font-medium">
+                +1 (123) 456-7890
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
