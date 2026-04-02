@@ -17,7 +17,8 @@ export default function HeroSlider({ slides }: Props) {
   const [mainRef, mainApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 3000, stopOnInteraction: false }),
   ]);
-  const [thumbRef, thumbApi] = useEmblaCarousel({ loop: true });
+  const [thumbRef, thumbApi] = useEmblaCarousel({loop: true,
+  });
   const [testimonialRef, testimonialApi] = useEmblaCarousel({ loop: true });
 
   const onMainSelect = useCallback(() => {
@@ -119,7 +120,7 @@ export default function HeroSlider({ slides }: Props) {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse gap-10 md:flex md:flex-row justify-between items-center w-full">
+      <div className="flex flex-col-reverse gap-10 md:flex md:flex-row justify-between items-center w-full overflow-hidden">
         {/* thumbnails */}
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-background to-transparent" />
