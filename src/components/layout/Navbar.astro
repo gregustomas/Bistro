@@ -1,0 +1,113 @@
+---
+import { CookingPot } from "lucide-react";
+import { ModeToggle } from "@/components/islands/ModeToggle";
+import MobileMenu from "@/components/islands/MobileMenu";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm"
+>
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16"
+  >
+    <a href="#" class="flex gap-2">
+      <CookingPot />
+      <span class="text-primary text-[20px] font-semibold">Bistro</span>
+    </a>
+
+    <nav class="hidden md:block">
+      <ul class="flex gap-6">
+        <li>
+          <a
+            href="#about"
+            class="text-sm hover:text-primary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors duration-200"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            href="#testimonials"
+            class="text-sm hover:text-primary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors duration-200"
+            >Testimonials</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="text-sm hover:text-primary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors duration-200"
+            >Contact Us</a
+          >
+        </li>
+        <li>
+          <a
+            href="#offers"
+            class="text-sm hover:text-primary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors duration-200"
+            >Offers</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="flex gap-4 items-center">
+      <ModeToggle client:load />
+      <a
+        href="#contact"
+        class="font-medium inline-flex items-center justify-center px-6 h-10 rounded-full bg-primary text-primary-foreground text-base relative overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:duration-1000 hover:before:bg-position-[-100%_0,0_0]"
+      >
+        Book table
+      </a>
+      <MobileMenu client:load />
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+    const setActive = () => {
+      const scrollY = window.scrollY;
+      let current = "";
+
+      sections.forEach((section) => {
+        const top = section.offsetTop - 100;
+        if (scrollY >= top) current = section.id;
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("text-primary", "bg-primary/5", "rounded-full");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("text-primary", "bg-primary/5", "rounded-full");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", setActive);
+    setActive();
+  });
+</script>
