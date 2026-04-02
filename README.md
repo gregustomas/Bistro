@@ -1,6 +1,7 @@
 # 🍽️ Bistro — Restaurant Landing Page
 
-A modern restaurant landing page built with Astro, React, Tailwind CSS and shadcn/ui.
+A practice recreation of the [Bistro template by Shadcn Studio](https://shadcnstudio.com/preview/templates/shadcn-astro-bistro-landing-page), built to learn Astro, React Islands, Embla Carousel and Tailwind CSS v4.
+
 
 **[Live Demo →](https://bistro-9qq.pages.dev/)**
 
