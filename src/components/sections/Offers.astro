@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import { Badge } from "../ui/badge";
+import Ofer1 from "@/assets/offers/offers-image-01.webp";
+import Ofer2 from "@/assets/offers/offers-image-02.webp";
+import Ofer3 from "@/assets/offers/offers-image-03.webp";
+import { Button } from "../ui/button";
+---
+
+<section class="py-8 sm:py-16 lg:py-24">
+  <div
+    class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center"
+  >
+    <div
+      class="mx-auto mb-12 flex max-w-2xl flex-col text-center items-center justify-center space-y-4 sm:mb-16 lg:mb-24"
+    >
+      <Badge variant="outline">Offers</Badge>
+      <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl">
+        Explore our Offerings
+      </h2>
+      <p class="text-xl text-muted-foreground">
+        Don't miss out on the dining experience. Reserve your table and indulge
+        in a culinary journey today.
+      </p>
+    </div>
+
+    <!-- offers -->
+    <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+      <!-- offer 1 -->
+      <div class="group relative overflow-hidden col-span-2 row-span-2">
+        <div class="absolute xl:top-6 xl:right-6 top-3 right-3 z-10">
+          <p
+            class="font-kaushan text-md text-white md:text-lg lg:text-xl xl:text-2xl"
+          >
+            Lunch Deal - $9.99
+          </p>
+        </div>
+        <div class="absolute xl:top-16 xl:right-6 top-12 right-3 z-10">
+          <a
+            href="#"
+            class="font-medium inline-flex items-center justify-center px-6 h-10 rounded-full bg-primary text-primary-foreground text-base relative overflow-hidden group/btn before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:duration-1000 group-hover:before:bg-position-[-100%_0,0_0]"
+          >
+            Book your table
+          </a>
+        </div>
+        <Image
+          src={Ofer1}
+          alt="Offer 1"
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <!-- offer 2 -->
+      <div class="group relative overflow-hidden col-span-2 max-h-60">
+        <div class="absolute xl:bottom-18.5 xl:left-4 bottom-16 left-3 z-10">
+          <p
+            class="font-kaushan text-md text-white md:text-lg lg:text-xl xl:text-2xl"
+          >
+            BOGO Special
+          </p>
+        </div>
+        <div class="absolute xl:bottom-5 xl:left-4 bottom-2 left-3 z-10">
+          <a
+            href="#"
+            class="font-medium inline-flex items-center justify-center px-6 h-10 rounded-full bg-primary text-primary-foreground text-base relative overflow-hidden group/btn before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:duration-1000 group-hover:before:bg-position-[-100%_0,0_0]"
+          >
+            Book your table
+          </a>
+        </div>
+        <Image
+          src={Ofer2}
+          alt="Offer 2"
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <!-- offer 3 -->
+      <div class="group relative overflow-hidden col-span-2 max-h-60">
+        <div class="absolute xl:top-6 xl:right-6 top-3 right-3 z-10">
+          <p
+            class="font-kaushan text-md text-white md:text-lg lg:text-xl xl:text-2xl"
+          >
+            Family Meal – $29.99
+          </p>
+        </div>
+        <div class="absolute xl:top-16 xl:right-6 top-12 right-3 z-10">
+          <a
+            href="#"
+            class="font-medium inline-flex items-center justify-center px-6 h-10 rounded-full bg-primary text-primary-foreground text-base relative overflow-hidden group/btn before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:duration-1000 group-hover:before:bg-position-[-100%_0,0_0]"
+          >
+            Book your table
+          </a>
+        </div>
+        <Image
+          src={Ofer3}
+          alt="Offer 3"
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</section>
