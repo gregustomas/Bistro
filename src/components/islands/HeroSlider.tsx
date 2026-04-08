@@ -77,10 +77,10 @@ export default function HeroSlider({ slides }: Props) {
   );
 
   return (
-    <div className="mx-auto flex h-full max-w-7xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto pt-16 md:pt-12 flex h-full max-w-7xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
       {/* main */}
       <div className="grid grid-cols-1 gap-6 gap-y-12 md:gap-y-16 lg:grid-cols-5">
-        <div className="flex flex-col gap-5 justify-center lg:col-span-3">
+        <div className="flex flex-col gap-5 justify-center lg:col-span-3 px-2 md:px-0 items-center lg:items-start">
           <h1 className="text-3xl leading-[1.29167] font-semibold text-balance max-lg:text-center sm:text-4xl lg:text-5xl">
             Savor the taste of perfection
           </h1>
@@ -120,12 +120,12 @@ export default function HeroSlider({ slides }: Props) {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse gap-10 md:flex md:flex-row justify-between items-center w-full overflow-hidden">
+      <div className="flex flex-col-reverse gap-10 md:flex lg:flex-row justify-between items-center w-full overflow-hidden">
         {/* thumbnails */}
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-background to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-background to-transparent" />
-          <div ref={thumbRef} className="relative w-2xl overflow-hidden">
+          <div ref={thumbRef} className="relative w-md md:w-2xl overflow-hidden">
             <div className="flex">
               {slides.map((slide, index) => (
                 <button
@@ -181,7 +181,7 @@ export default function HeroSlider({ slides }: Props) {
                   loading="lazy"
                 />
                 <div className="hidden sm:block shrink-0 w-0.5 h-6 rounded-full bg-primary" />
-                <p className="text-card-foreground">{slide.testimonial}</p>
+                <p className="text-card-foreground max-w-70 md:max-w-full">{slide.testimonial}</p>
               </div>
             ))}
           </div>
